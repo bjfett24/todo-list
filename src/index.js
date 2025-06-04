@@ -47,6 +47,16 @@ import { addTodoToList } from './add-todo.js';
 
 import { removeTodoFromList } from './remove-todo.js';
 
+import { listOfLists } from './list-of-lists.js';
+
+import { addListToList } from './add-list.js';
+
+import { removeListFromList } from './remove-list.js';
+
+import './page-load.js';
+
+import { populateList } from './populate.js';
+
 
 const newTodo = new Todo('Wash Car', 'Clean your car thoroughly', 'march 5th');
 
@@ -62,9 +72,19 @@ addTodoToList(newList, newTodo);
 
 console.log(newList.getTodos());
 
-removeTodoFromList(newList, newTodo);
+addListToList(listOfLists, newList);
 
-console.log(newList.getTodos());
+console.log(listOfLists.getListOfLists());
+
+removeListFromList(listOfLists, newList);
+
+console.log(listOfLists.getListOfLists());
+
+
+
+
+
+
 
 
 
