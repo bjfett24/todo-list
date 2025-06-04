@@ -1,0 +1,31 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "This is a todo list where you can create multiple lists and each will contain events or activities for you 'to do'.  The todo list will incorporate different objects that are the todo items as well as functions that can edit each list and each item.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjfett24/todo-list.git"
+  },
+  "keywords": [],
+  "author": "Ben Fetterman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjfett24/todo-list/issues"
+  },
+  "homepage": "https://github.com/bjfett24/todo-list#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

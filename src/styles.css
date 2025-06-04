@@ -1,0 +1,30 @@
+body, :root {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.heading {
+    width: 100vw;
+    display: flex;
+    justify-content: start;
+    gap: 10rem;
+    background-color: rgb(114, 114, 255);
+}
+
+.menu {
+    background: none;
+    border: 1px solid white;
+    color: white
+}
+
+.page.title {
+
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    
+}
