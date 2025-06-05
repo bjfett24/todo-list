@@ -6,6 +6,7 @@ import { addTodoToList } from "./add-todo.js";
 import { reloadContent } from "./content-reload.js";
 import { populateAddListButton } from "./populate-add-list-button.js";
 import { deleteList } from "./delete-list.js";
+import { populateTodos } from "./populate-todos.js";
 
 
 const populateListOfLists = function() {
@@ -17,6 +18,10 @@ const populateListOfLists = function() {
     for (let l of listOfLists.getListOfLists()) {
         const listDisplay = document.createElement('div');
         listDisplay.classList.add('list', 'display');
+        listDisplay.role = 'button';
+        listDisplay.addEventListener('click', function() {
+            populateTodos(l);
+        });
         content.appendChild(listDisplay);
 
         const listHeader = document.createElement('div');
@@ -75,7 +80,7 @@ const addListDialog = function() {
     popUp.appendChild(dialogContainer);
 
     const listForm = document.createElement('form');
-    listForm.classList.add('bookForm');
+    listForm.classList.add('listForm');
     listForm.action = '#';
     listForm.method = 'dialog';
     dialogContainer.appendChild(listForm);

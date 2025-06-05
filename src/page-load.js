@@ -1,5 +1,5 @@
 import { listOfLists } from "./list-of-lists.js";
-import { populateList, populateListOfLists } from "./populate.js";
+import { populateList, populateListOfLists } from "./populate-lists.js";
 import { List } from "./list.js";
 import { Todo } from './todo-class.js';
 import { addTodoToList } from "./add-todo.js";

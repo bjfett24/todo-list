@@ -55,7 +55,7 @@ import { removeListFromList } from './remove-list.js';
 
 import './page-load.js';
 
-import { populateList } from './populate.js';
+import { populateList } from './populate-lists.js';
 
 import { reloadContent } from './content-reload.js';
 
