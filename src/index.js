@@ -57,8 +57,12 @@ import './page-load.js';
 
 import { populateList } from './populate.js';
 
+import { reloadContent } from './content-reload.js';
 
-const newTodo = new Todo('Wash Car', 'Clean your car thoroughly', 'march 5th');
+import { populateAddListButton } from './populate-add-list-button.js';
+
+
+/*const newTodo = new Todo('Wash Car', 'Clean your car thoroughly', 'march 5th');
 
 const newList = new List('Before I leave for vacay');
 
@@ -74,11 +78,11 @@ console.log(newList.getTodos());
 
 addListToList(listOfLists, newList);
 
-console.log(listOfLists.getListOfLists());
+//console.log(listOfLists.getListOfLists());
 
 removeListFromList(listOfLists, newList);
 
-console.log(listOfLists.getListOfLists());
+console.log(listOfLists.getListOfLists());*/
 
 
 

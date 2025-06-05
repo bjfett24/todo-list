@@ -6,6 +6,10 @@ import { addTodoToList } from "./add-todo.js";
 import { addListToList } from "./add-list.js";
 import { populateAddListButton } from "./populate-add-list-button.js";
 
+//listOfLists.addList({name : 'name', todo: ['Blue', 'green', 'red']});
+//console.log(listOfLists.getListOfLists());
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const body = document.querySelector('body');
@@ -21,7 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'july 5th');
     addTodoToList(newList, newTodo);
 
-    addListToList(listOfLists, newList);
+    //console.log(newList.getTodos());
+
+    addListToList(newList);
+
+    //console.log(listOfLists.getListOfLists());
     
 
     populateListOfLists();

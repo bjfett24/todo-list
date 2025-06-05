@@ -1,4 +1,6 @@
-const removeListFromList = function(listOfLists, listOfTodos) {
+import { listOfLists } from "./list-of-lists.js";
+
+const removeListFromList = function(listOfTodos) {
     listOfLists.removeList(listOfTodos);
 }
 

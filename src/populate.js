@@ -5,10 +5,13 @@ import { Todo } from "./todo-class.js";
 import { addTodoToList } from "./add-todo.js";
 import { reloadContent } from "./content-reload.js";
 import { populateAddListButton } from "./populate-add-list-button.js";
+import { deleteList } from "./delete-list.js";
 
 
 const populateListOfLists = function() {
     const content = document.querySelector('#content');
+
+    console.log(listOfLists.getListOfLists());
     
     for (let l of listOfLists.getListOfLists()) {
         const listDisplay = document.createElement('div');
@@ -24,6 +27,14 @@ const populateListOfLists = function() {
         listDesc.classList.add('list', 'description');
         listDesc.textContent = `${l.getTodos().length} items`;
         listDisplay.appendChild(listDesc);
+
+        const xButton = document.createElement('button');
+        xButton.classList.add('list', 'delete');
+        xButton.textContent = '𝘅'
+        xButton.addEventListener('click', function() {
+            deleteList(this, l);
+        })
+        listDisplay.appendChild(xButton);
 
     }
 
@@ -41,7 +52,7 @@ const populateList = function() {
     addTodoToList(newList, newTodo);
 /**/
 
-    addListToList(listOfLists, newList);
+    addListToList(newList);
 
 
     populateListOfLists();
