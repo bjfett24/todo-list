@@ -38,7 +38,7 @@ class Todo {
         return this.dueDate;
     }
 
-    changeDueDate(newDate) {
+    changeDate(newDate) {
         this.dueDate = newDate;
     }
 

@@ -13,6 +13,16 @@ const populateListOfLists = function() {
     const content = reloadContent();
     content.classList.add('list');
 
+    const listPageHead = document.createElement('div');
+    listPageHead.classList.add('page', 'header');
+    listPageHead.textContent = 'Your To-Do Lists';
+    content.appendChild(listPageHead);
+
+    const listContainer = document.createElement('div');
+    listContainer.classList.add('list', 'container');
+    content.appendChild(listContainer);
+
+
     //console.log(listOfLists.getListOfLists());
     
     for (let l of listOfLists.getListOfLists()) {
@@ -22,7 +32,7 @@ const populateListOfLists = function() {
         listDisplay.addEventListener('click', function() {
             populateTodos(l);
         });
-        content.appendChild(listDisplay);
+        listContainer.appendChild(listDisplay);
 
         const listHeader = document.createElement('div');
         listHeader.classList.add('list', 'header');
@@ -31,20 +41,21 @@ const populateListOfLists = function() {
 
         const listDesc = document.createElement('div');
         listDesc.classList.add('list', 'description');
-        listDesc.textContent = `${l.getTodos().length} items`;
+        listDesc.textContent = `${l.getTodos().length} item(s)`;
         listDisplay.appendChild(listDesc);
 
         const xButton = document.createElement('button');
         xButton.classList.add('list', 'delete');
         xButton.textContent = '𝘅'
-        xButton.addEventListener('click', function() {
+        xButton.addEventListener('click', function(event) {
             deleteList(this, l);
+            event.stopPropagation();
         })
         listDisplay.appendChild(xButton);
 
     }
     const addListButton = populateAddListButton();
-    content.appendChild(addListButton);
+    listContainer.appendChild(addListButton);
 
 }
 
