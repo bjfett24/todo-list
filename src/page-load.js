@@ -1,10 +1,8 @@
-import { listOfLists } from "./list-of-lists.js";
-import { populateList, populateListOfLists } from "./populate-lists.js";
+import { populateListOfLists } from "./populate-lists.js";
 import { List } from "./list.js";
 import { Todo } from './todo-class.js';
-import { addTodoToList } from "./add-todo.js";
-import { addListToList } from "./add-list.js";
-import { populateAddListButton } from "./populate-add-list-button.js";
+import { addTodoToList } from "./add+rem-todo.js";
+import { addListToList } from "./add+rem-list.js";
 
 //listOfLists.addList({name : 'name', todo: ['Blue', 'green', 'red']});
 //console.log(listOfLists.getListOfLists());

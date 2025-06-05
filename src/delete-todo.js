@@ -1,4 +1,4 @@
-import { removeTodoFromList } from "./remove-todo.js";
+import { removeTodoFromList } from "./add+rem-todo.js";
 
 const deleteTodo = function(thisButton, thisList, thisTodo) {
     const parentDisplay = thisButton.parentNode;

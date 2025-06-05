@@ -39,27 +39,8 @@ Logic
 
 import './styles.css';
 
-import { Todo } from './todo-class.js';
-
-import { List } from './list.js';
-
-import { addTodoToList } from './add-todo.js';
-
-import { removeTodoFromList } from './remove-todo.js';
-
-import { listOfLists } from './list-of-lists.js';
-
-import { addListToList } from './add-list.js';
-
-import { removeListFromList } from './remove-list.js';
-
 import './page-load.js';
 
-import { populateList } from './populate-lists.js';
-
-import { reloadContent } from './content-reload.js';
-
-import { populateAddListButton } from './populate-add-list-button.js';
 
 
 /*const newTodo = new Todo('Wash Car', 'Clean your car thoroughly', 'march 5th');

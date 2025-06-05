@@ -1,8 +1,8 @@
 import { Todo } from "./todo-class.js";
 import { populateTodos } from "./populate-todos.js";
-import { addTodoToList } from "./add-todo.js";
+import { addTodoToList } from "./add+rem-todo.js";
 import { List } from "./list.js";
-import { addListToList } from "./add-list.js";
+import { addListToList } from "./add+rem-list.js";
 import { populateListOfLists } from "./populate-lists.js";
 
 
