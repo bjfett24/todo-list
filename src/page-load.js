@@ -1,5 +1,10 @@
 import { listOfLists } from "./list-of-lists.js";
-import { populateList } from "./populate.js";
+import { populateList, populateListOfLists } from "./populate.js";
+import { List } from "./list.js";
+import { Todo } from './todo-class.js';
+import { addTodoToList } from "./add-todo.js";
+import { addListToList } from "./add-list.js";
+import { populateAddListButton } from "./populate-add-list-button.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -7,32 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const content = document.createElement('div');
     content.id = 'content';
+    content.classList.add('list');
     body.appendChild(content);
+
+
+    const newList = new List('New York Trip');
+    //Edit out later
+    const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'july 5th');
+    addTodoToList(newList, newTodo);
+
+    addListToList(listOfLists, newList);
     
 
-    for (list of listOfLists.getListOfLists()) {
-        const listDisplay = document.createElement('div');
-        listDisplay.classList.add('list', 'display');
-        content.appendChild(listDisplay);
+    populateListOfLists();
 
-        const listHeader = document.createElement('div');
-        listHeader.classList.add('list', 'header');
-        listHeader.textContent = list.getName();
-        listDisplay.appendChild(listHeader);
-
-        const listDesc = document.createElement('div');
-        listDesc.classList.add('list', 'description');
-        listDesc.textContent = `${list.getTodos().length} items`;
-        listDisplay.appendChild(listDesc);
-
-
-    }
-
-    const addListButton = document.createElement('button');
-    addListButton.classList.add('addListButton');
-    addListButton.textContent = 'Add List';
-    addListButton.addEventListener('click', populateList);
-    content.appendChild(addListButton);
+    populateAddListButton()
 
 })
 
