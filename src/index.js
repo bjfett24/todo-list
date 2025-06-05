@@ -43,29 +43,6 @@ import './page-load.js';
 
 
 
-/*const newTodo = new Todo('Wash Car', 'Clean your car thoroughly', 'march 5th');
-
-const newList = new List('Before I leave for vacay');
-
-console.log(newList.getName());
-
-newList.changeName('After I come back from vacay');
-
-console.log(newList.getName());
-
-addTodoToList(newList, newTodo);
-
-console.log(newList.getTodos());
-
-addListToList(listOfLists, newList);
-
-//console.log(listOfLists.getListOfLists());
-
-removeListFromList(listOfLists, newList);
-
-console.log(listOfLists.getListOfLists());*/
-
-
 
 
 
