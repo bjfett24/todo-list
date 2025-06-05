@@ -1,4 +1,4 @@
-import { addTodoDialog } from "./populate-todos.js";
+import { addTodoDialog } from "./dialogs.js";
 
 
 const populateAddTodoButton = function(thisList) {

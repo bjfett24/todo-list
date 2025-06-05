@@ -1,4 +1,4 @@
-import { addListDialog } from "./populate-lists.js";
+import { addListDialog } from "./dialogs.js"
 
 
 const populateAddListButton = function() {
