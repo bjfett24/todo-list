@@ -9,7 +9,8 @@ const populateAddListButton = function() {
     addListButton.classList.add('addListButton');
     addListButton.textContent = 'Add List';
     addListButton.addEventListener('click', addListDialog);
-    content.appendChild(addListButton);
+    
+    return addListButton
 }
 
 export { populateAddListButton };

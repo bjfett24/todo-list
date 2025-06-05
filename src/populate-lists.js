@@ -43,7 +43,8 @@ const populateListOfLists = function() {
         listDisplay.appendChild(xButton);
 
     }
-    populateAddListButton();
+    const addListButton = populateAddListButton();
+    content.appendChild(addListButton);
 
 }
 

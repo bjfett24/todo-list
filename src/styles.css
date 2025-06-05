@@ -59,3 +59,69 @@ body, :root {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
 }
+
+
+/* TODO LIST PAGE */
+
+.page.header {
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.todo.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.todo.display {
+    border: 1px solid black;
+    width: 70ch;
+    display: grid;
+    grid-template: 2fr 6fr 1fr 1fr / 2fr 6fr 1fr 1fr;
+}
+
+.todo.name {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+}
+
+.todo.date {
+    grid-row: 1 / 2;
+    grid-column: 3 / 5;
+
+}
+
+.todo.date, .todo.name {
+    font-size: 1.5rem;
+    background-color: gray;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.todo.description {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    font-size: 1.25rem;
+
+}
+
+.todo.complete {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background-color: grey;
+    color: white;
+}
+
+.todo.deleteButton {
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
+}
+
+.addTodoButton {
+    padding: 0.5rem;
+}

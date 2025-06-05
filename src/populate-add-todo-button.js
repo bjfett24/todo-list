@@ -11,7 +11,7 @@ const populateAddTodoButton = function(thisList) {
     addTodoButton.addEventListener('click', function() {
         addTodoDialog(thisList);
     });
-    content.appendChild(addTodoButton);
+    return addTodoButton;
 }
 
 export { populateAddTodoButton };

@@ -3,6 +3,8 @@ import { reloadContent } from "./content-reload.js"
 import { List } from "./list.js";
 import { Todo } from "./todo-class.js";
 import { populateAddTodoButton } from "./populate-add-todo-button.js";
+import { deleteList } from "./delete-list.js";
+import { deleteTodo } from "./delete-todo.js";
 
 const populateTodos = function(thisList) {
     const content = reloadContent();
@@ -43,15 +45,24 @@ const populateTodos = function(thisList) {
         todoComplete.classList.add('todo', 'complete');
         todoComplete.textContent = completeSymbol(t.getComplete());
         currentTodo.appendChild(todoComplete);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('todo', 'deleteButton');
+        deleteButton.textContent = '🗑️';
+        deleteButton.addEventListener('click', function() {
+            deleteTodo(this, thisList, t);
+        })
+        currentTodo.appendChild(deleteButton);
     }
 
-    populateAddTodoButton(thisList);
+    const addTodoButton = populateAddTodoButton(thisList);
+    todoContainer.appendChild(addTodoButton);
 
     function completeSymbol(isComplete) {
         if (isComplete === true) {
-            return '✔️';
+            return 'Done ✔️';
         } else if (isComplete === false) {
-            return '𝐗';
+            return 'Not Done 𝐗';
         } else {
             return 'ERROR';
         }
