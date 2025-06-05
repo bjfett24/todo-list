@@ -5,6 +5,7 @@ import { Todo } from "./todo-class.js";
 import { populateAddTodoButton } from "./populate-add-todo-button.js";
 import { deleteList } from "./delete-list.js";
 import { deleteTodo } from "./delete-todo.js";
+import { todoToggleComplete, completeSymbol, completeButtonStyle } from "./toggle-complete.js";
 
 const populateTodos = function(thisList) {
     const content = reloadContent();
@@ -43,7 +44,11 @@ const populateTodos = function(thisList) {
 
         const todoComplete = document.createElement('button');
         todoComplete.classList.add('todo', 'complete');
-        todoComplete.textContent = completeSymbol(t.getComplete());
+        completeButtonStyle(todoComplete, t);
+        todoComplete.textContent = completeSymbol(t);
+        todoComplete.addEventListener('click', function() {
+            todoToggleComplete(this, t);
+        });
         currentTodo.appendChild(todoComplete);
 
         const deleteButton = document.createElement('button');
@@ -58,16 +63,10 @@ const populateTodos = function(thisList) {
     const addTodoButton = populateAddTodoButton(thisList);
     todoContainer.appendChild(addTodoButton);
 
-    function completeSymbol(isComplete) {
-        if (isComplete === true) {
-            return 'Done ✔️';
-        } else if (isComplete === false) {
-            return 'Not Done 𝐗';
-        } else {
-            return 'ERROR';
-        }
-    }
+
 }
+
+
 
 const addTodoDialog = function (thisList) {
     const popUp = document.createElement('dialog');
@@ -156,4 +155,4 @@ const addTodoDialog = function (thisList) {
     popUp.showModal();
 }
 
-export { populateTodos, addTodoDialog}
+export { populateTodos, addTodoDialog }

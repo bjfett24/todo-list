@@ -115,6 +115,7 @@ body, :root {
     grid-column: 1 / 2;
     background-color: grey;
     color: white;
+    font-size: 1rem;
 }
 
 .todo.deleteButton {

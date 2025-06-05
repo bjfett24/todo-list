@@ -9,9 +9,13 @@ class Todo {
     getComplete() {
         return this.isComplete;
     }
-    
-    markComplete() {
-        this.isComplete = true;
+
+    toggleComplete() {
+        if (this.isComplete === false) {
+            this.isComplete = true;
+        } else {
+            this.isComplete = false;
+        }
     }
 
     getName() {
