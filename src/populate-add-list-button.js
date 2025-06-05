@@ -1,4 +1,4 @@
-import { populateList } from "./populate.js";
+import { addListDialog } from "./populate.js";
 
 
 const populateAddListButton = function() {
@@ -8,7 +8,7 @@ const populateAddListButton = function() {
     const addListButton = document.createElement('button');
     addListButton.classList.add('addListButton');
     addListButton.textContent = 'Add List';
-    addListButton.addEventListener('click', populateList);
+    addListButton.addEventListener('click', addListDialog);
     content.appendChild(addListButton);
 }
 

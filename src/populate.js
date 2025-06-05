@@ -9,9 +9,10 @@ import { deleteList } from "./delete-list.js";
 
 
 const populateListOfLists = function() {
-    const content = document.querySelector('#content');
+    const content = reloadContent();
+    content.classList.add('list');
 
-    console.log(listOfLists.getListOfLists());
+    //console.log(listOfLists.getListOfLists());
     
     for (let l of listOfLists.getListOfLists()) {
         const listDisplay = document.createElement('div');
@@ -37,10 +38,11 @@ const populateListOfLists = function() {
         listDisplay.appendChild(xButton);
 
     }
+    populateAddListButton();
 
 }
 
-const populateList = function() {
+/*const populateList = function() {
 
     const content = reloadContent();
     content.classList.add('list');
@@ -50,7 +52,7 @@ const populateList = function() {
 //Edit out later
     const newTodo = new Todo('Gather fishing gear', 'go around the house and collect all of the fishing rods and organize the bait', 'july 1st');
     addTodoToList(newList, newTodo);
-/**/
+
 
     addListToList(newList);
 
@@ -59,6 +61,69 @@ const populateList = function() {
 
     populateAddListButton();
 
+}*/
+
+
+
+const addListDialog = function() {
+    const popUp = document.createElement('dialog');
+    popUp.classList.add('popUp');
+    document.body.appendChild(popUp);
+
+    const dialogContainer = document.createElement('div');
+    dialogContainer.classList.add('dialogContainer');
+    popUp.appendChild(dialogContainer);
+
+    const listForm = document.createElement('form');
+    listForm.classList.add('bookForm');
+    listForm.action = '#';
+    listForm.method = 'dialog';
+    dialogContainer.appendChild(listForm);
+
+    const titleLabel = document.createElement('label');
+    titleLabel.classList.add('title', 'label');
+    titleLabel.for = 'title';
+    titleLabel.textContent = 'What is the title of your new list?';
+    listForm.appendChild(titleLabel);
+
+    const titleInput = document.createElement('input');
+    titleInput.classList.add('title', 'input');
+    titleInput.type = 'text';
+    titleInput.id = 'title';
+    listForm.appendChild(titleInput);
+
+    const createButton = document.createElement('button');
+    createButton.type = 'submit';
+    createButton.classList.add('createButton')
+    createButton.textContent = 'Create';
+    listForm.appendChild(createButton);
+
+    listForm.addEventListener('submit', () => {
+        const title = titleInput.value;
+
+        if (title) {
+            const newList = new List(title);
+            addListToList(newList);
+            populateListOfLists();
+            popUp.close(); // Close the dialog
+        } else {
+            const messageBox = document.createElement('div');
+            messageBox.style.cssText = `
+                position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+                background-color: #ffdddd; color: #d8000c; padding: 10px 20px;
+                border: 1px solid #d8000c; border-radius: 5px; z-index: 1001;
+                font-family: sans-serif;
+            `;
+            messageBox.textContent = 'Please fill in a value for the Title.';
+            document.body.appendChild(messageBox);
+            setTimeout(() => {
+                messageBox.remove();
+            }, 3000); // Remove after 3 seconds
+        }
+    })
+
+    popUp.showModal();
 }
 
-export { populateList, populateListOfLists };
+
+export { /*populateList, */populateListOfLists, addListDialog };

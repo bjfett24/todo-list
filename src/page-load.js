@@ -34,7 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     populateListOfLists();
 
-    populateAddListButton()
-
 })
 
