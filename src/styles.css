@@ -3,6 +3,7 @@ body, :root {
     padding: 0px;
     height: 100vh;
     font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(185, 59, 59);
 }
 
 
@@ -10,7 +11,7 @@ body, :root {
 .heading {
     width: 100vw;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     gap: 10rem;
     background-color: rgb(255, 80, 80);
 }
@@ -31,18 +32,33 @@ body, :root {
 
 .container.list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
 }
 
 .list.display {
     display: grid;
-    grid-template: 1fr 1fr 2fr / 6fr 1fr 1fr;
-    border: 2px solid black;
-    padding: 1rem;
+    grid-template: 1fr 1fr / 6fr 1fr 1fr;
+    border: 0px solid black;
+    border-radius: 2.1rem;
+    padding: 1.5rem;
     column-gap: 0.4rem;
+    background-color: white;
+    color: rgb(0, 60, 255);
+    box-shadow: 4px 8px 10px 5px rgb(0, 0, 0, 0.2);
+    width: 20rem;
+    height: 5rem;
 
+
+}
+
+.list.display:hover {
+    background-color: rgb(230, 230, 230);
+    color: rgb(255, 0, 251);
+    box-shadow: 6px 10px 14px 10px rgb(0, 0, 0, 0.3);
 }
 
 .list.header {
@@ -68,13 +84,70 @@ body, :root {
     color: rgb(214, 214, 214);
 }
 
+.list.delete:hover {
+    background-color: rgb(255, 68, 0);
+    color: white;
+}
+
+.addListButton {
+    border: none;
+    border-radius: 2.1rem;
+    padding: 3rem;
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.277);
+    color: rgba(186, 186, 186, 0.733);
+    border: 2px solid black;
+}
+
+.addListButton:hover {
+    color: rgb(222, 222, 222);
+    border: 1px solid black;
+    background-color: rgba(117, 117, 117, 0.165);
+}
+
+.addListIcon {
+    width: 4rem;
+    height: 4rem;
+}
+
 
 /****** TODO LIST PAGE ******/
 
 .page.header {
     font-size: 3rem;
-    margin: 1rem 0px 1rem 4rem;
+    margin: 1rem 0px 3rem 4rem;
+    color: white;
+    font-weight: 800;
+    display: flex;
 }
+
+.page.head.text {
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    padding: 0.5rem;
+}
+
+.backButton {
+    display: flex;
+    gap: 0.7em;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.backButton:hover {
+    color: rgb(255, 80, 80);
+    font-weight: 800;
+}
+
 
 .todo.container {
     display: flex;
@@ -83,17 +156,25 @@ body, :root {
     align-items: center;
 }
 
-.todo.display.max {
-    border: 1px solid black;
+.todo.display.max, .todo.display.min {
     width: clamp(50ch, 560px, 700px);
     display: grid;
+    overflow: hidden;
+    box-shadow: 4px 8px 12px 8px rgb(0, 0, 0, 0.2);
+}
+
+.todo.display.max {
     grid-template: 2fr 1fr 6fr 1fr 1fr / 2fr 6fr 1fr 1fr;
+    background-color: rgb(109, 125, 175);
+    border-radius: 2rem;
 }
 
 .todo.display.min {
-    width: clamp(50ch, 560px, 700px);
-    display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .todo.name {
@@ -110,7 +191,7 @@ body, :root {
 
 .todo.date, .todo.name {
     font-size: 1.5rem;
-    background-color: gray;
+    background-color: rgb(51, 77, 160);
     color: white;
     font-weight: 600;
     padding: 1rem;
@@ -121,6 +202,7 @@ body, :root {
     grid-column: 2 / 3;
     font-size: 1.25rem;
     text-align: center;
+    color: white;
 
 }
 
@@ -130,6 +212,9 @@ body, :root {
     background-color: grey;
     color: white;
     font-size: 1rem;
+    border: none;
+    border-right: 2px solid white;
+    
 }
 
 .todo.deleteButton {
@@ -144,4 +229,25 @@ body, :root {
 
 .addTodoButton {
     padding: 0.5rem;
+    width: clamp(50ch, 560px, 700px);
+    border-radius: 2rem;
+    border: 1px solid rgb(168, 168, 168);
+    background-color: rgba(147, 147, 147, 0.237);
+    color: rgba(177, 177, 177, 0.456);
+}
+
+.addTodoIcon {
+    width: 2.25rem;
+    height: 2.25rem;
+
+}
+
+.addTodoButton:hover {
+    color: rgb(68, 68, 132);
+    background-color: rgba(106, 106, 106, 0.48);
+    border: 2px solid rgb(225, 225, 225);
+    color: rgb(227, 227, 227);
+
+
+
 }

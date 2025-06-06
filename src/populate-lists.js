@@ -14,8 +14,12 @@ const populateListOfLists = function() {
 
     const listPageHead = document.createElement('div');
     listPageHead.classList.add('page', 'header');
-    listPageHead.textContent = 'Your To-Do Lists';
     content.appendChild(listPageHead);
+
+    const pageHeadText = document.createElement('div');
+    pageHeadText.classList.add('page', 'head', 'text');
+    pageHeadText.textContent = 'Your To-Do Lists'
+    listPageHead.appendChild(pageHeadText);
 
     const listContainer = document.createElement('div');
     listContainer.classList.add('list', 'container');

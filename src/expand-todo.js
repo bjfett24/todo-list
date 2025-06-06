@@ -1,7 +1,7 @@
 import { Todo } from "./todo-class.js";
-import { completeSymbol } from "./toggle-complete.js";
-import { todoToggleComplete } from "./toggle-complete.js";
-import { completeButtonStyle } from "./toggle-complete.js";
+import { deleteTodo } from "./delete-todo.js";
+import { todoToggleComplete, completeSymbol, completeButtonStyle } from "./toggle-complete.js";
+import { editTodoDialog } from "./dialogs.js";
 
 class TodoCard {
     constructor(todoObj, thisList) {
@@ -17,6 +17,10 @@ class TodoCard {
 
     getThisTodo() {
         return this.todo;
+    }
+
+    getThisList() {
+        return this.list
     }
 
     toggleIsExpanded() {
@@ -105,6 +109,7 @@ class TodoCard {
 
     populateMaxCard() {
         const thisTodo = this.getThisTodo();
+        const thisList = this.getThisList();
 
 
         const currentTodo = this.card;
@@ -150,8 +155,8 @@ class TodoCard {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('todo', 'deleteButton');
         deleteButton.textContent = '🗑️';
-        deleteButton.addEventListener('click', () => {
-            deleteTodo(this, this.list, this.todo);
+        deleteButton.addEventListener('click', function() {
+            deleteTodo(this, thisList, thisTodo);
         })
         currentTodo.appendChild(deleteButton);
 
