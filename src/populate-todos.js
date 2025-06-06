@@ -5,6 +5,7 @@ import { populateAddTodoButton } from "./populate-add-todo-button.js";
 import { deleteTodo } from "./delete-todo.js";
 import { todoToggleComplete, completeSymbol, completeButtonStyle } from "./toggle-complete.js";
 import { editTodoDialog } from "./dialogs.js";
+import { populateListOfLists } from "./populate-lists.js";
 
 const populateTodos = function(thisList) {
     const content = reloadContent();
@@ -14,6 +15,14 @@ const populateTodos = function(thisList) {
     todoPageHead.classList.add('page', 'header');
     todoPageHead.textContent = thisList.getName();
     content.appendChild(todoPageHead);
+
+    const backButton = document.createElement('button');
+    backButton.classList.add('backButton');
+    backButton.textContent = 'Your Lists';
+    backButton.addEventListener('click', function() {
+        populateListOfLists();
+    })
+    content.appendChild(backButton);
 
     const todoContainer = document.createElement('div');
     todoContainer.classList.add('todo', 'container');
