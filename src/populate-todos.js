@@ -6,6 +6,7 @@ import { deleteTodo } from "./delete-todo.js";
 import { todoToggleComplete, completeSymbol, completeButtonStyle } from "./toggle-complete.js";
 import { editTodoDialog } from "./dialogs.js";
 import { populateListOfLists } from "./populate-lists.js";
+import { TodoCard } from "./expand-todo.js";
 
 const populateTodos = function(thisList) {
     const content = reloadContent();
@@ -31,49 +32,9 @@ const populateTodos = function(thisList) {
     const todos = thisList.getTodos();
 
     for (let t of todos) {
-        const currentTodo = document.createElement('div');
-        currentTodo.classList.add('todo', 'display');
-        todoContainer.appendChild(currentTodo);
-
-        const todoName = document.createElement('div');
-        todoName.classList.add('todo', 'name');
-        todoName.textContent = t.getName();
-        currentTodo.appendChild(todoName);
-
-        const todoDesc = document.createElement('div');
-        todoDesc.classList.add('todo', 'description');
-        todoDesc.textContent = t.getDescription();
-        currentTodo.appendChild(todoDesc);
-
-        const todoDate = document.createElement('div');
-        todoDate.classList.add('todo', 'date');
-        todoDate.textContent = t.getDate();
-        currentTodo.appendChild(todoDate);
-
-        const todoComplete = document.createElement('button');
-        todoComplete.classList.add('todo', 'complete');
-        completeButtonStyle(todoComplete, t);
-        todoComplete.textContent = completeSymbol(t);
-        todoComplete.addEventListener('click', function() {
-            todoToggleComplete(this, t);
-        });
-        currentTodo.appendChild(todoComplete);
-
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('todo', 'deleteButton');
-        deleteButton.textContent = '🗑️';
-        deleteButton.addEventListener('click', function() {
-            deleteTodo(this, thisList, t);
-        })
-        currentTodo.appendChild(deleteButton);
-
-        const editButton = document.createElement('button');
-        editButton.classList.add('todo', 'editButton');
-        editButton.textContent = 'edit ✏';
-        editButton.addEventListener('click', function() {
-            editTodoDialog(thisList, t);
-        })
-        currentTodo.appendChild(editButton);
+        const newTodoCard = new TodoCard(t, thisList);
+        newTodoCard.populateCardDisplay();
+        newTodoCard.populateMinCard();
     }
 
     const addTodoButton = populateAddTodoButton(thisList);

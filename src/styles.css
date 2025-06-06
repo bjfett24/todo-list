@@ -12,7 +12,7 @@ body, :root {
     display: flex;
     justify-content: start;
     gap: 10rem;
-    background-color: rgb(114, 114, 255);
+    background-color: rgb(255, 80, 80);
 }
 
 .menu {
@@ -83,11 +83,17 @@ body, :root {
     align-items: center;
 }
 
-.todo.display {
+.todo.display.max {
     border: 1px solid black;
-    width: 70ch;
+    width: clamp(50ch, 560px, 700px);
     display: grid;
     grid-template: 2fr 1fr 6fr 1fr 1fr / 2fr 6fr 1fr 1fr;
+}
+
+.todo.display.min {
+    width: clamp(50ch, 560px, 700px);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 
 .todo.name {

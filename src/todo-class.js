@@ -1,8 +1,8 @@
 class Todo {
-    constructor(name, description, dueDate) {
+    constructor(name, description, date) {
         this.name = name;
         this.description = description;
-        this.dueDate = dueDate;
+        this.date = date;
         this.isComplete = false;
     }
 
@@ -35,11 +35,11 @@ class Todo {
     }
 
     getDate() {
-        return this.dueDate;
+        return this.date;
     }
 
     changeDate(newDate) {
-        this.dueDate = newDate;
+        this.date = newDate;
     }
 
 
