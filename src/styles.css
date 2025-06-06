@@ -103,6 +103,19 @@ body, :root {
     border: 2px solid black;
 }
 
+.popUp {
+    background-color: rgba(167, 157, 243, 0.932);
+    border-radius: 1rem;
+    color: rgba(133, 15, 15, 0.786);
+    font-weight: 600;
+}
+
+.listForm {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 0.5rem;
+}
+
 .addListButton:hover {
     color: rgb(222, 222, 222);
     border: 1px solid black;
@@ -220,11 +233,62 @@ body, :root {
 .todo.deleteButton {
     grid-row: 5 / 6;
     grid-column: 4 / 5;
+    background-color: rgb(51, 77, 160);
+    color: white;
+    border: 1px solid rgb(23, 34, 72);
+    border-top-left-radius: 1rem;
+}
+
+.trashIcon {
+    width: 2rem;
+    height: 2rem;
+
+
 }
 
 .todo.editButton {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(51, 77, 160);
+    color: white;
+    border: 1px solid rgb(23, 34, 72);
+    border-top-right-radius: 1rem;
+}
+
+.todo.editButton:hover, .todo.deleteButton:hover {
+    color: rgb(255, 80, 80);
+    background-color: rgb(50, 88, 214);
+}
+
+.pencilIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.todoForm {
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr 1fr;
+    gap: 1rem;
+}
+
+.createButton {
+    border-radius: 0.5rem;
+    background-color: rgba(175, 38, 38, 0.464);
+    color: white;
+}
+
+.createButton:hover {
+    background-color: rgba(175, 38, 38, 0.936);
+    box-shadow: 2px 4px 8px 5px rgb(0, 0, 0, 0.15);
+}
+
+input:focus {
+    border: 1px solid rgb(0, 145, 255);
 }
 
 .addTodoButton {

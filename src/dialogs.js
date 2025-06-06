@@ -4,6 +4,7 @@ import { addTodoToList } from "./add+rem-todo.js";
 import { List } from "./list.js";
 import { addListToList } from "./add+rem-list.js";
 import { populateListOfLists } from "./populate-lists.js";
+import { convertDate } from "./convert-dates.js";
 
 
 const addTodoDialog = function (thisList) {
@@ -53,7 +54,7 @@ const addTodoDialog = function (thisList) {
 
     const dateInput = document.createElement('input');
     dateInput.classList.add('date', 'input');
-    dateInput.type = 'text';
+    dateInput.type = 'date';
     dateInput.id = 'date';
     todoForm.appendChild(dateInput);
 
@@ -66,7 +67,7 @@ const addTodoDialog = function (thisList) {
     todoForm.addEventListener('submit', () => {
         const name = nameInput.value;
         const desc = descInput.value;
-        const date = dateInput.value;
+        const date = convertDate(dateInput.value);
 
 
         if (name.length > 0) {
@@ -142,7 +143,7 @@ const editTodoDialog = function(thisList, thisTodo) {
 
     const dateInput = document.createElement('input');
     dateInput.classList.add('date', 'input');
-    dateInput.type = 'text';
+    dateInput.type = 'date';
     dateInput.id = 'date';
     dateInput.value = thisTodo.getDate();
     todoForm.appendChild(dateInput);
