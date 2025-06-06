@@ -157,7 +157,7 @@ const editTodoDialog = function(thisList, thisTodo) {
     todoForm.addEventListener('submit', () => {
         const name = nameInput.value;
         const desc = descInput.value;
-        const date = dateInput.value;
+        const date = convertDate(dateInput.value);
 
 
         if (name.length > 0) {

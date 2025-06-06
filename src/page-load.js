@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const newList = new List('New York Trip');
     //Edit out later
-    const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'july 5th');
+    const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'July 5th');
     addTodoToList(newList, newTodo);
 
     //console.log(newList.getTodos());
