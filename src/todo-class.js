@@ -1,9 +1,10 @@
 class Todo {
-    constructor(name, description, date) {
+    constructor(name, description, date, id = crypto.randomUUID(), isComplete = false) {
         this.name = name;
         this.description = description;
         this.date = date;
-        this.isComplete = false;
+        this.id = id
+        this.isComplete = isComplete;
     }
 
     getComplete() {

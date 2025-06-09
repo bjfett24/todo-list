@@ -4,7 +4,7 @@ import { addTodoToList } from "./add+rem-todo.js";
 import { List } from "./list.js";
 import { addListToList } from "./add+rem-list.js";
 import { populateListOfLists } from "./populate-lists.js";
-import { convertDate } from "./convert-dates.js";
+import { setStorage } from "./set-storage.js";
 
 
 const addTodoDialog = function (thisList) {
@@ -67,8 +67,7 @@ const addTodoDialog = function (thisList) {
     todoForm.addEventListener('submit', () => {
         const name = nameInput.value;
         const desc = descInput.value;
-        const date = convertDate(dateInput.value);
-
+        const date = dateInput.value;
 
         if (name.length > 0) {
             const newTodo = new Todo(name, desc, date);
@@ -157,13 +156,14 @@ const editTodoDialog = function(thisList, thisTodo) {
     todoForm.addEventListener('submit', () => {
         const name = nameInput.value;
         const desc = descInput.value;
-        const date = convertDate(dateInput.value);
-
+        const date = dateInput.value;
 
         if (name.length > 0) {
             thisTodo.changeName(name);
             thisTodo.changeDescription(desc);
             thisTodo.changeDate(date);
+            setStorage();
+
             populateTodos(thisList);
             popUp.close(); // Close the dialog
         } else {

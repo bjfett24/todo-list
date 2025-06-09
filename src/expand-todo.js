@@ -3,6 +3,7 @@ import { deleteTodo } from "./delete-todo.js";
 import { todoToggleComplete, completeSymbol, completeButtonStyle } from "./toggle-complete.js";
 import { editTodoDialog } from "./dialogs.js";
 import { SVG } from "./create-svg-element.js";
+import { convertToRead } from "./convert-dates.js";
 
 class TodoCard {
     constructor(todoObj, thisList) {
@@ -91,7 +92,7 @@ class TodoCard {
 
         const todoDate = document.createElement('div');
         todoDate.classList.add('todo', 'date');
-        todoDate.textContent = this.date;
+        todoDate.textContent = convertToRead(this.date);
         currentTodo.appendChild(todoDate);
 
         const todoComplete = document.createElement('button');
@@ -136,7 +137,7 @@ class TodoCard {
 
         const todoDate = document.createElement('div');
         todoDate.classList.add('todo', 'date');
-        todoDate.textContent = this.date;
+        todoDate.textContent = convertToRead(this.date);
         todoDate.role = 'button';
         todoDate.addEventListener('click', () => {
             this.onCardClick();

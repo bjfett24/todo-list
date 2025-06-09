@@ -1,4 +1,4 @@
-const convertDate = function(dateString /*2003-08-05*/) {
+const convertToRead = function(dateString /*2003-08-05*/) {
     const dateArray = dateString.split('-');
 
     let month;
@@ -65,4 +65,5 @@ const convertDate = function(dateString /*2003-08-05*/) {
     return convertedDate
 }
 
-export { convertDate }
+
+export { convertToRead }

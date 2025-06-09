@@ -3,6 +3,7 @@ import { List } from "./list.js";
 import { Todo } from './todo-class.js';
 import { addTodoToList } from "./add+rem-todo.js";
 import { addListToList } from "./add+rem-list.js";
+import { getStorage } from "./get-storage.js";
 
 //listOfLists.addList({name : 'name', todo: ['Blue', 'green', 'red']});
 //console.log(listOfLists.getListOfLists());
@@ -17,15 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     content.classList.add('list');
     body.appendChild(content);
 
+    getStorage();
 
-    const newList = new List('New York Trip');
+    //const newList = new List('New York Trip');
     //Edit out later
-    const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'July 5th');
-    addTodoToList(newList, newTodo);
+    //const newTodo = new Todo('Gather swimming gear', 'get anything you are going to want when sitting next to the pool: sunglasses, swimsuit, goggles.', 'July 5th');
+    //addTodoToList(newList, newTodo);
 
     //console.log(newList.getTodos());
 
-    addListToList(newList);
+    //addListToList(newList);
 
     //console.log(listOfLists.getListOfLists());
     

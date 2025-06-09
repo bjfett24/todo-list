@@ -1,7 +1,8 @@
 class List {
-    constructor(name) {
+    constructor(name, id = crypto.randomUUID()) {
         this.name = name;
         this.todo = [];
+        this.id = id
     }
 
     changeName(newName) {

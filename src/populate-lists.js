@@ -26,7 +26,7 @@ const populateListOfLists = function() {
     content.appendChild(listContainer);
 
 
-    //console.log(listOfLists.getListOfLists());
+    console.log(listOfLists.getListOfLists());
     
     for (let l of listOfLists.getListOfLists()) {
         const listDisplay = document.createElement('div');
@@ -60,7 +60,7 @@ const populateListOfLists = function() {
     const addListButton = populateAddListButton();
     listContainer.appendChild(addListButton);
 
-    
+
 
 }
 

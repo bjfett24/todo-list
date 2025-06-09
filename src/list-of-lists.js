@@ -1,6 +1,10 @@
 const listOfLists = (function() {
     let listList = [];
 
+    const setList = (list) => {
+        listList = list;
+    }
+
     const addList = (list) => {
         listList.push(list);
     }
@@ -12,7 +16,7 @@ const listOfLists = (function() {
     const getListOfLists = () => {
         return listList;
     }
-    return { addList, removeList, getListOfLists };
+    return { addList, removeList, getListOfLists, setList };
 })();
 
 export { listOfLists };

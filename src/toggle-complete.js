@@ -1,4 +1,6 @@
+import { setStorage } from "./set-storage.js";
 import { Todo } from "./todo-class.js";
+
 
 const todoToggleComplete = function(thisButton, thisTodo) {
     thisTodo.toggleComplete();
@@ -12,6 +14,7 @@ const todoToggleComplete = function(thisButton, thisTodo) {
     }
 
     thisButton.textContent = completeSymbol(thisTodo);
+    setStorage();
 }
 
 const completeSymbol = function(todo) {
